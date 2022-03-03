@@ -76,9 +76,22 @@ const product_details = ({ productData }) => {
 
 export default product_details;
 
-export async function getServerSideProps({ req, res, query }) {
-  const id = query.id;
+export async function getStaticPaths() {
+  const { data, error } = await axios.get(getAllProducts);
 
+  // Get the paths we want to pre-render based on posts
+  const paths = data.map((data) => ({
+    params: { id: data.id.toString() },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: blocking } will server-render pages
+  // on-demand if the path doesn't exist.
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(ctx) {
+  const id = ctx.params.id;
   const { data, error } = await axios.get(getSingleProduct(id));
 
   if (data) {
@@ -86,6 +99,7 @@ export async function getServerSideProps({ req, res, query }) {
       props: {
         productData: JSON.stringify(data),
       },
+      revalidate: 20,
     };
   } else {
     console.log(error);
