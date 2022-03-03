@@ -1,0 +1,115 @@
+.signin_div {
+  position: relative;
+}
+.signin_content {
+  position: absolute;
+  top: 30px;
+  right: -40px;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 2px 20px rgb(119, 114, 114);
+  transition: all 0.5s;
+}
+.signin_content::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  top: -5px;
+  right: 40%;
+  transform: rotate(45deg);
+}
+.navbar_backgroud {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  box-shadow: 0px 2px 100px rgba(230, 221, 221, 0.712);
+}
+.navbar_styles {
+  animation-name: dropdown;
+  animation-duration: 0.8s;
+  animation-delay: 100ms;
+  transition: all 0.8s ease-in-out;
+}
+@keyframes dropdown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.hamburger {
+  height: 0.22rem;
+  background: black;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+  position: relative;
+}
+
+/* @media(max-width:768px) {
+.signin_div:active .signin_content{
+    display: flex;
+    flex-direction: column;
+}
+} */
+
+.header_sub_menu {
+  /* transition: all 0.3s ease; */
+
+  /* transform: rotateX(90deg); */
+}
+.header_sub_menu_active {
+  /* animation: dropdown 500ms linear forwards; */
+  /* transition: all 0.2s ease;
+  transform: rotateX(0deg); */
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+.arrowUp {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+}
+
+.arrowDown {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+.dropDownDiv {
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.dropUpDiv {
+  transition: all 0.5s ease-in-out;
+  width: 0;
+  height: 0;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+/* .arrowDown:hover {
+  transition: all 0.5s ease-in-out;
+  transform: rotateX(0deg);
+} */
