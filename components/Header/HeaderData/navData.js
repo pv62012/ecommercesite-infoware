@@ -1,61 +1,57 @@
 const navbarData = [
   {
-    title: "Services",
+    title: "Categories",
     path: "/",
     subnav: [
       {
-        title: "business process outsource",
+        title: "Women's",
         path: "/",
       },
       {
-        title: "Compliance & regulatory",
+        title: "Men's",
         path: "/",
       },
       {
-        title: "audit & assurance",
+        title: "Electronics",
         path: "/",
       },
       {
-        title: "domestic & international taxation",
+        title: "Bag",
         path: "/",
       },
       {
-        title: "public sector advisory",
+        title: "Laptop",
         path: "/",
       },
       {
-        title: "collaboration advisory",
+        title: "Footwear",
         path: "/",
       },
       {
-        title: "startup advisory",
+        title: "Books",
         path: "/",
       },
       {
-        title: "financial advisory",
+        title: "jwellery",
         path: "/",
       },
     ],
   },
   {
-    title: "insight",
-    path: "/main/insight",
+    title: "Shop",
+    path: "/not_build_yet",
   },
   {
-    title: "Industry",
-    path: "/main/insight",
+    title: "Blogs",
+    path: "/not_build_yet",
   },
   {
     title: "about us",
-    path: "/main/insight",
-  },
-  {
-    title: "outreach",
-    path: "/main/insight",
+    path: "/not_build_yet",
   },
   {
     title: "contact us",
-    path: "/main/insight",
+    path: "/not_build_yet",
   },
 ];
 

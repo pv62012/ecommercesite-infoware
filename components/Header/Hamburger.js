@@ -16,12 +16,12 @@ function Hamburger() {
   return (
     <div>
       <div
-        className=" z-50 flex flex-col justify-around w-8 h-7 bg-transparent border-none cursor-pointer p-0 m-3 lg:hidden"
+        className=" z-50 flex flex-col justify-around w-8 h-7 bg-transparent border-none cursor-pointer  mr-5  lg:hidden"
         onClick={handleSidebar}
       >
         <div
-          className={`bg-black w-4 h-1 origin-right rounded-3xl transform duration-500  
-            }`}
+          className={`bg-black w-4 h-1 origin-right rounded-3xl transform duration-500   
+            `}
         />
         <div
           className={`bg-black w-7 h-1 rounded-3xl transform duration-500`}

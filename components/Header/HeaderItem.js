@@ -42,7 +42,7 @@ function HeaderItem({ title, data, link }) {
             onClick={data?.subnav && setNavOpen}
             className={` transition-all  ${
               activeLink ? "text-[#658E75]" : "text-black"
-            }  uppercase flex items-center  m-2 font-normal text-lg tracking-wide cursor-pointer lg:text-lg lg:font-medium lg:tracking-wider xl:font-bold `}
+            }  uppercase flex items-center hover:text-[#658e75]  ml-3 font-normal text-lg tracking-wide cursor-pointer lg:text-lg lg:font-medium lg:tracking-wider xl:font-bold `}
           >
             {title}{" "}
             {data.subnav ? (
@@ -55,11 +55,12 @@ function HeaderItem({ title, data, link }) {
               </div>
             ) : null}
           </h2>
-          {activeLink ? (
-            <div className=" rounded-full text-center mx-auto bg-black m-2 w-1 h-1 "></div>
-          ) : (
-            ""
-          )}
+
+          <div
+            className={` rounded-full text-center mx-auto ${
+              activeLink ? "bg-black" : "bg-transparent"
+            }  m-2 w-1 h-1 `}
+          ></div>
         </>
       </Link>
       {data.subnav ? (

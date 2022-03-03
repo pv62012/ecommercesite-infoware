@@ -5,36 +5,30 @@ import styled from "@emotion/styled";
 
 const Footer = () => {
   return (
-    <footer className=" mt-24 px-8 py-10  border-gray-200 border-t-2 lg:px-20 lg:max-w-screen-xl xl:mx-auto  xl:max-w-screen-2xl">
-      <section className="flex flex-wrap flex-col md:flex-row ">
+    <footer className=" mt-24 px-6 py-10  border-gray-200 border-t-2 md:px-10 lg:px-16  lg:max-w-screen-xl xl:mx-auto xl:px-28  xl:max-w-screen-2xl">
+      <section className="flex w-full flex-wrap flex-col md:flex-row ">
         <div className="flex-[25%]">
           <FooterHeadings title="Policies & Legal" />
-          <FooterSubMenu title="Priviacy Policy" path={"/loginsinf"} />
-          <FooterSubMenu title="Terms of use" path={"/loginsinf"} />
-          <FooterSubMenu title="Cookie Policy" path={"/loginsinf"} />
-          <FooterSubMenu title="Site Map" path={"/loginsinf"} />
+          <FooterSubMenu title="Priviacy Policy" path={"/"} />
+          <FooterSubMenu title="Terms of use" path={"/"} />
+          <FooterSubMenu title="Cookie Policy" path={"/"} />
+          <FooterSubMenu title="Site Map" path={"/"} />
         </div>
         <div className="flex-[25%] mt-16 md:mt-0">
-          <FooterHeadings title="Why Counce International" />
-          <FooterSubMenu title="About us" path={"/loginsinf"} />
-          <FooterSubMenu title="Our Alumini" path={"/loginsinf"} />
-          <FooterSubMenu title="Featured Insights" path={"/loginsinf"} />
-          <FooterSubMenu title="Subscription" path={"/loginsinf"} />
+          <FooterHeadings title="Quick links" />
+          <FooterSubMenu title="About us" path={"/"} />
+          <FooterSubMenu title="Shop" path={"/"} />
+          <FooterSubMenu title="Blogs" path={"/"} />
+          <FooterSubMenu title="Subscription" path={"/"} />
         </div>
         <div className="flex-[25%] mt-16 md:mt-0">
-          <FooterHeadings title="Join our Network Group" />
-          <FooterSubMenu
-            title="Become Professional Partner"
-            path={"/loginsinf"}
-          />
-          <FooterSubMenu
-            title="Join Learner’s  Community"
-            path={"/loginsinf"}
-          />
-          <FooterSubMenu title="Login  " path={"/loginsinf"} />
+          <FooterHeadings title="Accounts" />
+          <FooterSubMenu title="My Account" path={"/"} />
+          <FooterSubMenu title="Order Tracking" path={"/"} />
+          <FooterSubMenu title="Wishlist " path={"/"} />
         </div>
-        <div className="flex-[20%] mt-16 md:mt-0  ">
-          <div className="ml-10">
+        <div className="flex-[20%]  mt-16 md:mt-0  ">
+          <div className=" ml-auto">
             <FooterHeadings title="Connect With us" />
             <IconsList>
               <li className="bg-[#1DA1F2]">
@@ -53,9 +47,7 @@ const Footer = () => {
         </div>
       </section>
       <section className="flex flex-col items-baseline mt-16 font-Montserrat md:flex-row">
-        <h2 className="text-lg sm:text-xl lg:text-2xl  ">
-          Counce International LLP.
-        </h2>
+        <h2 className="text-lg sm:text-xl lg:text-2xl  ">Infoware Ecommerce</h2>
         <h4 className="text-base lg:text-xl">(C) 2022- All right reserved</h4>
       </section>
     </footer>

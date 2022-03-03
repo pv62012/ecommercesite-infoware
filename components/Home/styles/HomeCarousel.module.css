@@ -70,12 +70,12 @@
   padding: 0;
   outline: 0;
   border: 0;
-  width: 30px;
+  width: 10px;
+  margin-right: 15px;
   height: 30px;
-  margin-right: 7.5px;
-  margin-left: 7.5px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .embla__dot:after {
@@ -84,9 +84,15 @@
   height: 10px;
   border-radius: 50%;
   content: "";
+  transition: all 0.3s ease-in-out;
 }
 
 .embla__dot.is_selected:after {
-  background-color: #e1b382;
+  background-color: #658e75;
+  width: 30px;
+  border-radius: 10px;
   opacity: 1;
+}
+.embla__dot.is_selected {
+  width: 30px;
 }

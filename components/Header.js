@@ -17,6 +17,7 @@ import HeaderItem from "./Header/HeaderItem";
 // import Cookies from "js-cookie";
 
 import navbarData from "./Header/HeaderData/navData";
+import { BiCart, BiHeart } from "react-icons/bi";
 
 const SelectCityDiv = styled(FormControl)({
   margin: "0px 30px 10px 0px",
@@ -73,7 +74,7 @@ function Header() {
         <Sidebar />
       </section>
       <div
-        className={`  flex w-full top-0 z-30 fixed pt-3  transition-all duration-700 transform items-center bg-[#fafafa] px-8 lg:px-16 ${
+        className={`  flex w-full top-0 z-30 fixed pt-5 pb-3  transition-all duration-700 transform items-center bg-[#fafafa] px-6 md:px-10 lg:px-16 xl:px-28 ${
           styles.navbar_backgroud
         } ${navbar ? "" : ` ${styles.navbar_styles} `} `}
       >
@@ -84,7 +85,7 @@ function Header() {
           <Hamburger />
           <Link href="/">
             <>
-              <div className="m-2 uppercase  text-xl font-bold cursor-pointer ">
+              <div className=" uppercase  text-xl font-bold cursor-pointer ">
                 {/* <Image
                   src="/logo/CI.png"
                   className=" object-contain"
@@ -105,6 +106,15 @@ function Header() {
               <HeaderItem title={data.title} data={data} link={data?.path} />
             </div>
           ))}
+        </div>
+        <div className="ml-auto lg:ml-2 xl:ml-5">
+          <section className="flex">
+            <BiHeart className="text-3xl hover:text-red-400  " />
+            <BiCart className="text-3xl ml-4 " />
+          </section>
+          <section className="hidden lg:flex">
+            <div className=" rounded-full text-center mx-auto  m-2 w-1 h-1 "></div>
+          </section>
         </div>
         {/* <div className="mr-5 ml-auto md:mr-10">
           <Link href="/">

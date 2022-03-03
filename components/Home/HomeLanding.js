@@ -31,6 +31,7 @@ const MainButton = styled(Button)(({ theme }) => ({
   backgroundColor: "transparent !important",
   padding: "8px 20px",
   fontSize: "20px",
+  fontWeight: "600",
   border: "3px solid",
   borderColor: "#f5f5f5 !important",
   display: "flex",
@@ -109,13 +110,13 @@ function HomeLanding() {
                 key={index}
                 className={`${embla__slide} w-full relative h-96 lg:h-screen  `}
               >
-                <div className=" absolute z-10  ml-7 p-3 mt-20  text-white  w-full md:w-[550px]  md:ml-10 md:mt-28 lg:w-[650px] lg:mt-44 lg:ml-32    ">
-                  <section className=" text-2xl font-bold tracking-wider md:text-3xl  lg:mt-10 lg:text-6xl">
+                <div className=" absolute z-10  ml-6  mt-24  text-white  w-full md:w-[550px]  md:ml-10 md:mt-28 lg:w-[650px] lg:mt-44 lg:ml-32 xl:ml-28    ">
+                  <section className=" text-3xl font-bold tracking-wider md:text-3xl  lg:mt-10 lg:text-6xl">
                     <AnimatedTitle currentInView={selectedIndex == index}>
                       {data?.title}
                     </AnimatedTitle>
                   </section>
-                  <section className="mt-5 text-xl mr-5">
+                  <section className="mt-3 mr-5 md:mt-5 lg:text-xl">
                     <AnimatedTitle currentInView={selectedIndex == index}>
                       {data?.description}
                     </AnimatedTitle>
@@ -148,7 +149,7 @@ function HomeLanding() {
           </div>
         </div>
         <div
-          className={` absolute bottom-2 left-28 md:left-10  lg:bottom-10 lg:left-36 ${embla__dots}`}
+          className={` absolute bottom-2 left-6 md:left-10  lg:bottom-10 lg:left-36 xl:left-28 ${embla__dots}`}
         >
           {scrollSnaps.map((_, index) => (
             <button

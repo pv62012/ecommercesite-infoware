@@ -5,7 +5,7 @@ import { wrapper } from "../redux/store";
 
 const progress = new ProgressBar({
   size: 2,
-  color: "#c89666",
+  color: "#658e75",
   delay: 100,
   className: "z-50",
 });

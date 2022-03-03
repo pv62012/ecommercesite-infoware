@@ -5,9 +5,6 @@ import {
 } from "../constants/frontEndConstants";
 
 export const frontEndReducers = (state = { open: false }, action) => {
-  console.log("====================================");
-  console.log(action);
-  console.log("====================================");
   switch (action.type) {
     case SIDEBAR_OPEN:
       return {
