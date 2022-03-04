@@ -92,7 +92,7 @@ function Header() {
                   width={200}
                   height={80}
                 /> */}
-                Ecommerce
+                Pankaj
               </div>
             </>
           </Link>
