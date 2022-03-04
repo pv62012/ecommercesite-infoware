@@ -15,36 +15,90 @@ import {
   getSingleProduct,
 } from "../../urlConstants/productUrlConstants";
 
+import { motion } from "framer-motion";
+
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const fadeInUp = {
+  y: 0,
+  opacity: 1,
+  transition: {
+    duration: 0.6,
+    ease: easing,
+  },
+};
+
 const product_details = ({ productData }) => {
   const details = JSON.parse(productData);
   return (
-    <div>
+    <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
       <Head>
         <title>{details?.title}</title>
       </Head>
       <MainLayout>
         <main className=" md:flex px-5 mt-20 md:px-10 lg:mt-36 lg:px-28 lg:max-w-screen-xl xl:mx-auto  xl:max-w-screen-2xl">
           <section className=" md:flex-[40%] lg:flex-[35%]">
-            <div className="relative h-96 md:h-[500px]">
+            <motion.div
+              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ x: 200, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative h-96 md:h-[500px]"
+            >
               <Image
                 layout="fill"
                 className="object-contain"
                 src={details?.image}
                 alt={details?.title}
               />
-            </div>
-            <div className="flex justify-between">
+            </motion.div>
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="flex justify-between"
+            >
               <ProductAddButton>Add to cart</ProductAddButton>
               <ProductAddButton>Buy Now</ProductAddButton>
-            </div>
+            </motion.div>
           </section>
-          <section className="mt-10 text-[#595959] md:pl-10 md:flex-[60%]">
-            <div className="text-[#242424]">
+          <motion.section
+            whileInView={stagger}
+            className="mt-10 text-[#595959] md:pl-10 md:flex-[60%]"
+          >
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="text-[#242424]"
+            >
               <h1 className="text-xl font-semibold tracking-wider lg:text-3xl">
                 {details?.title}
               </h1>
-            </div>
-            <div className="mt-5 flex justify-between md:justify-start ">
+            </motion.div>
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="mt-5 flex justify-between md:justify-start "
+            >
               <Rating
                 name="read-only"
                 value={details?.rating?.rate}
@@ -52,25 +106,49 @@ const product_details = ({ productData }) => {
                 readOnly
               />{" "}
               <p className="ml-5">{details?.rating?.count} Ratings</p>
-            </div>
-            <div className="text-[#242424] text-xl my-5 font-semibold lg:text-2xl">
+            </motion.div>
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="text-[#242424] text-xl my-5 font-semibold lg:text-2xl"
+            >
               <CurrencyFormatter price={details?.price} />
-            </div>
+            </motion.div>
             <hr />
-            <div className="mt-5">
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="mt-5"
+            >
               <h3 className="text-[#242424] font-semibold lg:text-xl">
                 Description
               </h3>
               <p className="text-base lg:text-lg">{details?.description}</p>
-            </div>
-            <div className="flex justify-between md:hidden">
+            </motion.div>
+            <motion.div
+              initial={{
+                y: 60,
+                opacity: 0,
+                transition: { duration: 0.6, ease: easing },
+              }}
+              whileInView={fadeInUp}
+              className="flex justify-between md:hidden"
+            >
               <ProductAddButton>Add to cart</ProductAddButton>
               <ProductAddButton>Buy Now</ProductAddButton>
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
         </main>
       </MainLayout>
-    </div>
+    </motion.div>
   );
 };
 

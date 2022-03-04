@@ -3,11 +3,43 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import CurrencyFormatter from "../helper/CurrencyFormatter";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+
+import { motion } from "framer-motion";
+
+let easing = [0.6, -0.05, 0.01, 0.99];
 
 const ProductCard = ({ id, image, title, price, rating }) => {
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+
+  // const fadeInUp = {
+  //   animate:
+  // };
   return (
     <Link href={`/product_details/${id}`}>
-      <div className=" cursor-pointer shadow-md rounded-lg max-w-xs">
+      <motion.div
+        ref={titleRef}
+        initial={{
+          y: 60,
+          opacity: 0,
+          transition: { duration: 0.6, ease: easing },
+        }}
+        animate={
+          titleInView && {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.6,
+              ease: easing,
+            },
+          }
+        }
+        transition={{ duration: 0.5 }}
+        className=" cursor-pointer shadow-md rounded-lg max-w-xs"
+      >
         <section className="relative h-72  rounded-t-lg">
           <Image
             layout="fill"
@@ -30,7 +62,7 @@ const ProductCard = ({ id, image, title, price, rating }) => {
             />
           </div>
         </section>
-      </div>
+      </motion.div>
     </Link>
   );
 };

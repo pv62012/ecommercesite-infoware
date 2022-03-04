@@ -6,9 +6,11 @@ import HomeProductList from "../components/Home/HomeProductList";
 import MainLayout from "../components/Layout/MainLayout";
 import { getAllProducts } from "../urlConstants/productUrlConstants";
 
+import { motion } from "framer-motion";
+
 export default function Home({ productData }) {
   return (
-    <div>
+    <motion.div>
       <Head>
         <title>Infoware Ecommerce</title>
         <meta name="description" content="this is a ecommerce site" />
@@ -22,7 +24,7 @@ export default function Home({ productData }) {
           <HomeProductList productData={productData} />
         </section>
       </MainLayout>
-    </div>
+    </motion.div>
   );
 }
 
