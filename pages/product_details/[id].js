@@ -45,7 +45,7 @@ const product_details = ({ productData }) => {
       </Head>
       <MainLayout>
         <main className=" md:flex px-5 mt-20 md:px-10 lg:mt-36 lg:px-28 lg:max-w-screen-xl xl:mx-auto  xl:max-w-screen-2xl">
-          <section className=" md:flex-[40%] lg:flex-[35%]">
+          <section className=" overflow-hidden md:flex-[40%] lg:flex-[35%]">
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: 200, opacity: 0 }}

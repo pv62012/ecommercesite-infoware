@@ -12,7 +12,6 @@ let easing = [0.6, -0.05, 0.01, 0.99];
 const ProductCard = ({ id, image, title, price, rating }) => {
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
-    rootMargin: "-100px 0px",
   });
 
   // const fadeInUp = {
