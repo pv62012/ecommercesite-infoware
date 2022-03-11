@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 
 import { motion } from "framer-motion";
 
-let easing = [0.6, -0.05, 0.01, 0.99];
+let easing = [0.6, 0.05, 0.01, 0.99];
 
 const ProductCard = ({ id, image, title, price, rating }) => {
   const [titleRef, titleInView] = useInView({
@@ -23,19 +23,17 @@ const ProductCard = ({ id, image, title, price, rating }) => {
         ref={titleRef}
         initial={{
           y: 60,
-          opacity: 0,
+          opacity: 0.5,
           transition: { duration: 0.6, ease: easing },
         }}
-        animate={
-          titleInView && {
-            y: 0,
-            opacity: 1,
-            transition: {
-              duration: 0.6,
-              ease: easing,
-            },
-          }
-        }
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.6,
+            ease: easing,
+          },
+        }}
         transition={{ duration: 0.5 }}
         className=" cursor-pointer shadow-md rounded-lg max-w-xs"
       >
